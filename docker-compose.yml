@@ -1,0 +1,45 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: database/dockerfile
+      args:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports: 
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+      #- database/db.sql:/docker-entrypoint-initdb.database/db.sql
+    networks:
+      - web_net
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/dockerfile
+    networks:
+      - web_net
+    command: 
+      sh -c "python ./backend/manage.py runserver 8000"
+    depends_on: #links:
+      - db
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/dockerfile
+    networks:
+      - web_net
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
+    external: true
+
+networks:
+  web_net:
+    name: web_net
