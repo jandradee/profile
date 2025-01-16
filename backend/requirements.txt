@@ -6,3 +6,4 @@ pillow
 autopep8
 mysqlclient
 django-admin-interface
+django-cors-headers
