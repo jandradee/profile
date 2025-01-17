@@ -28,6 +28,7 @@ class education(models.Model):
     current = models.CharField(max_length=200, blank=True)
     id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
     Image = models.ImageField(upload_to='education/', blank=True)
+    title = models.CharField(max_length=200, blank=True)
 
 class courses(models.Model):
     course_name = models.CharField(max_length=200)
@@ -50,29 +51,22 @@ class certification(models.Model):
     Image = models.ImageField(upload_to='certifications/', blank=True)
 
 class experience(models.Model):
-        id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
-        title = models.CharField(max_length=200)
-        employment_type = models.CharField(max_length=200)
-        company_or_organization = models.CharField(max_length=200)
-        start_date = models.DateField()
-        end_date = models.DateField() 
-        address = models.CharField(max_length=255)
-        description = models.CharField(max_length=255)
-        profile_head_line = models.CharField(max_length=255)
-        languaje = models.CharField(max_length=200)
+    id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    employment_type = models.CharField(max_length=200)
+    company_or_organization = models.CharField(max_length=200)
+    start_date = models.DateField()
+    end_date = models.DateField() 
+    address = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    profile_head_line = models.CharField(max_length=255)
+    languaje = models.CharField(max_length=200)
     
 class volunteering(models.Model):
-     id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
-     institution_name = models.CharField(max_length=200)
-     start_date = models.DateField()
-     end_date = models.DateField() 
-     position = models.CharField(max_length=200)
-     description = models.CharField(max_length=200)
-
-
-
-
-    
-
-
-
+    id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
+    institution_name = models.CharField(max_length=200)
+    start_date = models.DateField()
+    end_date = models.DateField() 
+    position = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
+    Image = models.ImageField(upload_to='volunteering/', blank=True)
