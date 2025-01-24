@@ -5,7 +5,7 @@ RUN npm install -g http-server
 WORKDIR /app
 COPY . .
 
-EXPOSE 8081
+EXPOSE 8080
 
 CMD [ "http-server", "dist" ] 
 
