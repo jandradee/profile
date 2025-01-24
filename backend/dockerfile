@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM python:latest
 WORKDIR /app
 COPY . .
@@ -13,4 +14,21 @@ RUN git config --global user.email "jandradee@outlook.com"
 #RUN django-admin startproject admin ./backend
 RUN mkdir ./backend/core
 RUN cd ./backend/core
+=======
+FROM python:latest
+WORKDIR /app
+COPY . .
+#RUN python -m venv venv
+#RUN python venv/bin/pip install -r requirements.txt
+
+RUN pip install -r ./backend/requirements.txt
+RUN apt install -y --no-install-recommends git
+RUN git config --global user.name "JUAN CARLOS ANDRADE ESPERANZA"
+RUN git config --global user.email "jandradee@outlook.com"
+
+
+#RUN django-admin startproject admin ./backend
+RUN mkdir ./backend/core
+RUN cd ./backend/core
+>>>>>>> 9a971a73d9688a7106efcbe914fd4e3f05f1316f
 #RUN python ./backend/manage.py startapp core /core
