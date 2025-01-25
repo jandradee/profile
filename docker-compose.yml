@@ -14,14 +14,14 @@ services:
       - mysql_data:/var/lib/mysql
       #- database/db.sql:/docker-entrypoint-initdb.database/db.sql
     networks:
-      - web_net
+      - local_network
 
   backend:
     build:
       context: .
       dockerfile: backend/dockerfile
     networks:
-      - web_net
+      - local_network
     command: 
       sh -c "python ./backend/manage.py runserver 8000"
     depends_on: #links:
@@ -32,7 +32,7 @@ services:
       context: .
       dockerfile: frontend/dockerfile
     networks:
-      - web_net
+      - local_network
     depends_on:
       - backend
 
@@ -41,5 +41,5 @@ volumes:
     external: true
 
 networks:
-  web_net:
-    name: web_net
+  local_network:
+    name: local_network

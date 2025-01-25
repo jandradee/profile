@@ -93,8 +93,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'profile_db',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'django_usr',
+        'PASSWORD': 'z2rTZpdN01Q6',
         'HOST': 'profile-db-1', #host.docker.internal
         'PORT': '3306',
     }

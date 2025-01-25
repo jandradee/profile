@@ -11,6 +11,6 @@ RUN git config --global user.email "jandradee@outlook.com"
 
 
 #RUN django-admin startproject admin ./backend
-RUN mkdir ./backend/core
-RUN cd ./backend/core
+#RUN mkdir ./backend/core
+#RUN cd ./backend/core
 #RUN python ./backend/manage.py startapp core /core
