@@ -1,9 +1,11 @@
 <template>
-  <profileUser> </profileUser>
+ 
+  <testprofile> </testprofile>
 </template>
 
 <script setup>
-import profileUser from './components/profileUser.vue';
+
+import testprofile from './components/testprofile.vue';
 </script>
 
 <style scoped>
