@@ -16,9 +16,9 @@
         <div class="intro-section">
           <div v-for="user in profileUser" :key="user.id_profile" class="intro-text">
             <h2>Hello, It's Me</h2>
-            <h1>{{user.full_name}}</h1>
-            <h3>And I'm a <span class="highlight">Frontend Developer</span></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nulla sed saepe rerum, animi expedita.</p>
+            <h1> {{ user.full_name }} </h1>
+            <h3>And I'm a <span class="highlight"> {{ user.position }} </span></h3>
+            <p> {{ user.description }} </p>
             
             <div class="social-icons">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
