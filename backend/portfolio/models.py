@@ -13,7 +13,9 @@ class profile(models.Model):
     email = models.EmailField(max_length=100)  # Correo electrónico
     driver_license = models.CharField(max_length=20, blank=True)  # Licencia de conducir (opcional)
     profilePic = models.ImageField(upload_to='profile_pics/', blank=True)
-# Create your models here.
+    position = models.CharField(max_length=200, blank=True)
+    description = models.CharField(max_length=200, blank=True)
+
 
 class phone(models.Model):
     id_profile = models.ForeignKey(profile, on_delete=models.CASCADE)
