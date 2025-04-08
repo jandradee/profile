@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'profile_db',
         'USER': 'django_usr',
         'PASSWORD': 'z2rTZpdN01Q6',
-        'HOST': 'profile-db-1', #host.docker.internal
+        'HOST': 'localhost', #host.docker.internal
         'PORT': '3306',
     }
 }
